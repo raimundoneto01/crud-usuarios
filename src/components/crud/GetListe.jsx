@@ -61,13 +61,19 @@ export function GetListe(){
   const handleCadastro =(event)=>{
     event.preventDefault()
  
-    GetFormPost({
-      name: event.target["name"].value,
-      sobrenome: event.target["sobrenome"].value,
-      phone: event.target["phone"].value,
-      cidade: event.target["cidade"].value,
-      estado: event.target["estado"].value,
+    let hasValue = Array.from(event.target).filter(Element =>{
+      return Element.value !==""
     })
+    if(hasValue.length){
+
+        GetFormPost({
+          name: event.target["name"].value,
+          sobrenome: event.target["sobrenome"].value,
+          phone: event.target["phone"].value,
+          cidade: event.target["cidade"].value,
+          estado: event.target["estado"].value,
+        })
+    }
     event.target["name"].value="";
     event.target["sobrenome"].value="";
     event.target["phone"].value="";
