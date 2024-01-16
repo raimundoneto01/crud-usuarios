@@ -112,7 +112,7 @@ export function GetListe() {
                     list.name
                   )}{" "}
                 </li>
-                <li >
+                <li>
                   SOBRE-NOME :{" "}
                   {id === list.id ? (
                     <input
@@ -142,7 +142,7 @@ export function GetListe() {
                     list.phone
                   )}{" "}
                 </li>
-                <li >
+                <li>
                   CIDADE :{" "}
                   {id === list.id ? (
                     <input
@@ -157,7 +157,7 @@ export function GetListe() {
                     list.cidade
                   )}{" "}
                 </li>
-                <li >
+                <li>
                   ESTADO :{" "}
                   {id === list.id ? (
                     <input
@@ -187,7 +187,8 @@ export function GetListe() {
                       onClick={() => Editar(list)}
                       className="w-14 h-6 text-base font-bold border
                        border-yellow-200 rounded hover:border-yellow-500
-                      hover:bg-yellow-600 focus:text-gray-400" >
+                      hover:bg-yellow-600 focus:text-gray-400"
+                    >
                       Editar
                     </button>
                   )}
@@ -195,7 +196,8 @@ export function GetListe() {
                     onClick={() => DeletarItems(list.id)}
                     className="w-14 h-6 text-base font-bold border
                      border-red-500 rounded hover:border-red-700
-                    hover:bg-red-600 focus:text-gray-400" >
+                    hover:bg-red-600 focus:text-gray-400"
+                  >
                     Excluir
                   </button>
                 </li>
