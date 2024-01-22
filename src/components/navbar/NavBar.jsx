@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom"
 export function NavBar(){
   return(
-    <nav className="w-full h-20 flex justify-between bg-slate-900 py-6 px-10">
+    <nav className="w-ful h-20 flex md:flex-row sm:flex-col sm:py-3 justify-between bg-slate-900 py-6 px-10">
       <h1 className="text-gray-200 text-4xl font-mono">
         <Link to={`/`} >Lista</Link>
       </h1>

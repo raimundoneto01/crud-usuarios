@@ -1,94 +1,16 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
+import { useGetLista } from "./../crud/useGetLista";
+
 
 export function GetListe() {
-  const [list, setList] = useState([]);
-  const [form, setForm] = useState({});
-  const [id, setId] = useState("");
-
-  const handleForm = ({ target }) => {
-    const { name, value } = target;
-    setForm({ ...form, [name]: value });
-  };
-
-  async function GetLista() {
-    const resposta = await axios.get(
-      "https://64e7ab01b0fd9648b7903ce3.mockapi.io/usuarios/usuarios"
-    );
-    const data = resposta.data;
-    setList(data);
-  }
-
-  async function FormEditar(id) {
-    await axios.put(
-      `https://64e7ab01b0fd9648b7903ce3.mockapi.io/usuarios/usuarios/${id}`,
-      form
-    );
-    setId("");
-    setForm({});
-
-    const findIndexUserEdite = list.findIndex((u) => u.id === id);
-    list[findIndexUserEdite] = {
-      ...list[findIndexUserEdite],
-      name: form.name,
-      sobrenome: form.sobrenome,
-      phone: form.phone,
-      cidade: form.cidade,
-      estado: form.estado,
-    };
-  }
-
-  const Editar = (list) => {
-    setForm(list);
-    setId(list.id);
-  };
-
-  async function DeletarItems(id) {
-    await axios.delete(
-      `https://64e7ab01b0fd9648b7903ce3.mockapi.io/usuarios/usuarios/${id}`
-    );
-    await GetLista();
-  }
-
-  useEffect(() => {
-    GetLista();
-  }, []);
-
-  async function GetFormPost(data) {
-    const postage = await axios.post(
-      "https://64e7ab01b0fd9648b7903ce3.mockapi.io/usuarios/usuarios",
-      data
-    );
-    setList([...list, postage.data]);
-  }
-
-  const handleCadastro = (event) => {
-    event.preventDefault();
-    const hasValue = Array.from(event.target).filter((Element) => {
-      return Element.value !== "";
-    });
-    if (hasValue.length) {
-      GetFormPost({
-        name: event.target["name"].value,
-        sobrenome: event.target["sobrenome"].value,
-        phone: event.target["phone"].value,
-        cidade: event.target["cidade"].value,
-        estado: event.target["estado"].value,
-      });
-    }
-
-    event.target["name"].value = "";
-    event.target["sobrenome"].value = "";
-    event.target["phone"].value = "";
-    event.target["cidade"].value = "";
-    event.target["estado"].value = "";
-  };
+ const { id, form, list, handleForm, FormEditar, Editar, DeletarItems, handleCadastro } = useGetLista()
 
   return (
-    <div className="w-full h-screen md:bg-slate-800 sm:bg-slate-800 text-sm px-2 ">
-      <h1 className="text-2xl underline">Listrados:</h1>
-      <div className="bg-slate-800 sm:bg-slate-800 flex flex-col md:flex-row justify-around">
-        <div className="w-96 h-96 bg-slate-800 overflow-y-scroll mt-10 px-5 py-2 ">
+    <div className="w-full h-screen md:bg-slate-800 sm:bg-slate-900 text-sm px-2 ">
+      <h1 className="text-2xl text-orange-400 px-2">Project/Mockapi.io/
+       <span className="text-base text-zinc-400 font-serif">Usuários</span>
+       </h1>
+      <div className=" w-full h-full overflow-x-scroll bg-slate-800 sm:bg-slate-800 flex flex-col md:flex-row justify-around">
+        <div className="w-96 h-96 bg-slate-800 border border-gray-500 hover:border-gray-400 rounded-xl overflow-y-scroll mt-10 px-5 py-2">
           {list.length === 0 ? (
             <p>Lista vazia...</p>
           ) : (
@@ -173,7 +95,7 @@ export function GetListe() {
                   )}{" "}
                 </li>
                 <li>
-                  {id == list.id ? (
+                  {id === list.id ? (
                     <button
                       onClick={() => FormEditar(list.id)}
                       className="w-14 h-6 text-base font-bold border
