@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 export function NavBar() {
   return (
-    <nav className="max-w-screen h-16 px-10 py-2 text-3xl
+    <nav className="w-screen fixed h-16 px-10 py-2 text-3xl
      font-semibold text-emerald-300 
      justify-between bg-red-500 flex ">
       <h1 className="hover:text-emerald-700">

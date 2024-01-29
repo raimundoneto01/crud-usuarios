@@ -9,7 +9,7 @@ export function GetListe() {
 
 
   return (
-    <div className="flex flex-col px-10 py-10 bg-emerald-400">
+    <div className="flex flex-col mt-10 px-10 py-10 bg-emerald-400">
       <h1 className="text-2xl text-orange-200 ">Project/Mockapi.io/
        <span className="text-white underline">Usuários</span>
        </h1>
@@ -20,7 +20,7 @@ export function GetListe() {
              className="px-3 py-2 border-2 border-orange-300 hover:border-orange-500
              text-orange-100  hover:bg-orange-500 font-mono text-lg rounded-full">Novo Usuário</button>
           </div>
-          <div className="w-full space-y-7 rounded overflow-y-scroll">
+          <div className="w-full h-svh overflow-y-scroll space-y-7 rounded ">
             {list.length === 0 ? (
                <p>Lista vazia...</p>
                 ) : (
@@ -83,7 +83,7 @@ export function GetListe() {
                       onChange={handleForm}
                     />
                   ) : (
-                    <p className="text-red-600 text-lg font-mono px-5">{list.phone} </p>
+                    <p className="text-red-600 text-lg font-mono px-5">{list.cidade} </p>
                   )}{" "}
                 </li>
                 <li className="flex">
@@ -117,7 +117,7 @@ export function GetListe() {
                   <button className="px-3 ml-2 bg-red-400 text-lg font-semibold rounded
                      hover:text-white hover:bg-red-600"
                     onClick={() => DeletarItems(list.id)}>
-                    Excluir
+                    Apagar
                   </button>
                 </li>
               </ol>
