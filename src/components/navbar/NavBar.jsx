@@ -3,7 +3,7 @@ export function NavBar() {
   return (
     <nav className="w-screen fixed h-16 px-10 py-2 text-3xl
      font-semibold text-emerald-300 
-     justify-between bg-red-500 flex ">
+     justify-between sm:flex-row bg-red-500 flex ">
       <h1 className="hover:text-emerald-700">
         <Link to={`/`}>Lista</Link>
       </h1>
