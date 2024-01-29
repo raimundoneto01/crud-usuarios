@@ -5,10 +5,10 @@ export function GetPost(){
 const {handleCadastro} = useGetLista()
 
   return(
-    <div className="h-screen flex flex-col items-center px-5 py-10 bg-emerald-400">
+    <div className="h-screen flex flex-col items-center mt-10 px-5 py-10 bg-emerald-400">
       
-          <h1>
-            Preencha seus dados
+          <h1 className="text-zinc-300 tracking-widest py-5 text-xl">
+            Preencha com seus Dados
           </h1>
       <div className="border border-gray-400 bg-emerald-500 rounded-xl p-2">
           <form className="flex flex-col space-y-5 "
