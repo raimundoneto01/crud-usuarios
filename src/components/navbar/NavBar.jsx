@@ -7,7 +7,7 @@ export function NavBar() {
       <h1 className="hover:text-emerald-700">
         <Link to={`/`}>Lista</Link>
       </h1>
-      <ul className="flex space-x-5 text-xl text-yellow-400">
+      <ul className="flex space-x-3 text-xl sm:text-sm sm:flex-row text-yellow-400">
         <li className="hover:text-yellow-200">
           <Link to={`/`}>Mas Informações</Link>
         </li>
