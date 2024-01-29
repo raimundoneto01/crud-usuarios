@@ -3,9 +3,9 @@ import { NavBar } from "./components/navbar/NavBar";
 
 export default function App() {
   return (
-    <div className="w-full h-screen bg-slate-900 overflow-y-scroll  ">
+    <div className="w-screen overflow-auto">
       <NavBar />
-      <div className=" sm:bg-slate-900 md:bg-slate-900 text-white px-5">
+      <div >
         <Outlet />
       </div>
     </div>

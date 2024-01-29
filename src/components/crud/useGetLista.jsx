@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import api from "../../service/api";
+import { useNavigate } from "react-router-dom";
 
 export function useGetLista() {
   const [list, setList] = useState([]);
   const [form, setForm] = useState({});
   const [id, setId] = useState("");
+  const navigate = useNavigate()
 
   const handleForm = ({ target }) => {
     const { name, value } = target;
@@ -52,6 +54,15 @@ export function useGetLista() {
     setList([...list, postage.data]);
   }
 
+  const NaviForm=()=>{
+    navigate("/naverotas")
+   }
+
+   const NaviLista=()=>{
+    navigate("/")
+   }
+  
+
   const handleCadastro = (event) => {
     event.preventDefault();
     const hasValue = Array.from(event.target).filter((Element) => {
@@ -72,7 +83,12 @@ export function useGetLista() {
     event.target["phone"].value = "";
     event.target["cidade"].value = "";
     event.target["estado"].value = "";
+
+    NaviLista();
   };
+
+
+
   return {
     id,
     form,
@@ -82,5 +98,6 @@ export function useGetLista() {
     Editar,
     DeletarItems,
     handleCadastro,
+    NaviForm
   };
 }

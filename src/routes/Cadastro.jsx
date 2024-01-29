@@ -1,8 +1,9 @@
-import { GetPost } from './../components/crud/GetPost';
+import { GetGerenciar } from '../components/crud/GetGerenciar';
+
 export function Cadastro(){
   return(
-    <>
-      <GetPost/>
-    </>
+    <div className='h-screen bg-emerald-400 text-center overflow-y-scroll'>
+      <GetGerenciar/>
+    </div>
   )
 }

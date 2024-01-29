@@ -9,6 +9,7 @@ import { Home } from './routes/Home.jsx';
 import { Cadastro } from './routes/Cadastro.jsx';
 import { ErroPages } from './routes/ErroPages.jsx';
 import { Gerenciamento } from './routes/Gerenciamento.jsx';
+import { NaveRotas } from './routes/NaveRotas.jsx'
 
 
 const router = createBrowserRouter([
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
         path:'gerenciamento',
         element: <Gerenciamento/>
       },
+      {
+        path: "naverotas", 
+        element: <NaveRotas/>
+      }
     ]
   }
 ])
